@@ -1,6 +1,15 @@
 h2{
     text-align: center;
 }
+h3{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+.row{
+    position:relative;
+}
 
 .option1{
     height: 400px;
@@ -23,21 +32,24 @@ h2{
 }
 
 .forOption1{
-    position:absolute;
-    bottom:0;
-    margin-bottom:10px;
-    margin-left:30px;
+    position:relative;
+    margin-top:15px;
+    
 }
 .forOption2{
-    position:absolute;
-    bottom:0;
-    margin-bottom:10px;
-    margin-left:30px;
+    position:relative;
+    margin-top:15px;
+    
 }
 .forOption3{
+    position:relative;
+    margin-top:15px;
+   
+}
+
+.check{
     position:absolute;
-    bottom:0;
-    margin-bottom:10px;
-    margin-left:30px;
+    bottom:-70px;
+    left:45%;
 }
 
