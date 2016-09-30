@@ -20,19 +20,22 @@
 <body>
     <h2>Guess Again</h2>
     <h3> Rules</h3>
-    <p>Welcome to Guess Again. The rules of the game are simple. Below there are three cards that have three different random numbers assigned to them and you as the player will have 10 tries to assign the correct number to the correct card.</p>
+    <p>Welcome to Guess Again. The rules of the game are simple. Below there are three cards that have three different random numbers assigned to them. Two of the same number will never appear. For example you may have the sequence 1 , 2 , 3 but never 1 , 2 , 2.</p>
     <ul>
+        <li>ONLY USE NUMBERS 0-9</li>
         <li style="color:red">If you assign a number that is not in the sequence the card will turn red</li>
         <li style="color:yellow">If you assign a number that is in the sequence but not assigned to that specific card, then the card will turn yellow.</li>
         <li style ="color:green">If you assign the correct number to the correct card then that card will turn green.</li>
     </ul>
     <div class="container">
         <div class="row">
+            <div class = "turns">
+            </div>
             <div class="col-sm-3 option1">
                 <center>
                  <form>
                      <label for="forOption1">Guess #1:   
-                <input type="number" class ="forOption1" min = "1" max = "10">
+                <input type="number" class ="forOption1" min = "0" max = "9" max.value.length="2">
                  </form>
                 </center>
             </div>
@@ -40,7 +43,7 @@
                 <center>
                     <form>
                         <label for="forOption2">Guess #2:
-               <input type="number" class ="forOption2" min = "1" max = "10">
+               <input type="number" class ="forOption2" min = "0" max = "9">
                     </form>
                 </center>
             </div>
@@ -48,13 +51,14 @@
                 <center>
                     <form>
                         <label for="forOption3">Guess #3:
-                <input type="number" class ="forOption3" min = "1" max = "10">
+                <input type="number" class ="forOption3" min = "0" max = "9">
                 </form>
                 </center>
             </div>
         </div>
        <div class ="row">
           <button class = "btn btn-default check">CHECK</button>
+          <button class ="btn btn-primary reset" style="visibility:hidden">PLAY AGAIN</button>
        </div>
 
 

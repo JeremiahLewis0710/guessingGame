@@ -1,27 +1,28 @@
 
 $(function(){
-var random1 = Math.floor((Math.random() * 10) + 1);
-var random2 = Math.floor((Math.random() * 10) + 1);
-var random3 = Math.floor((Math.random() * 10) + 1);
+var random1 = Math.floor((Math.random() * 9) + 0);
+var random2 = Math.floor((Math.random() * 9) + 0);
+var random3 = Math.floor((Math.random() * 9) + 0);
 
-if(random1 == random2|| random1 == random3){
-    random1 = Math.floor((Math.random() * 10) + 1);
-    console.log(random1)
-    console.log(random2)
-    console.log(random3)
-}
+    if(random1 == random2|| random1 == random3){
+    random1 = Math.floor((Math.random() * 9) + 0);
+    console.log(random1);
+    console.log(random2);
+    console.log(random3);
+
+ }
 else if( random2 == random3){
-    random2 = Math.floor((Math.random() * 10) + 1);
-    console.log(random1)
-    console.log(random2)
-     console.log(random3)
+    random2 = Math.floor((Math.random() * 9) + 0);
+    console.log(random1);
+    console.log(random2);
+     console.log(random3);
+
 }
 else{
     console.log(random1)
     console.log(random2)
     console.log(random3)
 }
-
 
 
 $(".check").click(function (){
@@ -31,13 +32,14 @@ var option3 = $(".forOption3").val();
     console.log(random1);
     console.log(random2);
     console.log(random3);
-if(option1 > 10||option2 > 10||option3 > 10){
-    alert("Error: Please Only Use Numbers 1- 10");
+if(option1 > 9||option2 > 9||option3 > 9){
+    alert("Error: Please Only Use Numbers 0- 9");
+    $(".forOption1").val("");
     return;
 }
-else if(option1 == 0 ||option2 == 0||option3 == 0){
+else if(option1 == $(".forOption1").val("") ||option2 == $(".forOption2").val("")||option3 == $(".forOption3").val("")){
     alert("Please Fill Out All Guesses!");
-    return;
+    return null;
 }
 //If the answer is in the correct card the background turns green
 if(option1 == random1){
@@ -72,8 +74,21 @@ else if(option3==random1||option3==random2){
 //the value in 3 is not listed at all so background turns red.
 else{$(".option3").css("background-color","red");}
 
+if (option1==random1 && option2 == random2 && option3 == random3){
+    alert("YOU WON!!!!!!!")
+    $(".option1").css("background-color","green");
+    $(".option2").css("background-color","green");
+    $(".option3").css("background-color","green");
+    $(".reset").css("visibility","visible");
+
+};
+
 
 
 });
 
+});
+$(".reset").click(function(){
+    console.log("reset button");
+    location.reload(true);
 });
